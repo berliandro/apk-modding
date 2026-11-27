@@ -25,8 +25,8 @@ Source: user statement and official Morphe sources, 2026-11-27.
 - Version code: 1561187872; size 198,948,665 bytes; published signature ID 24bb (other valid: 3891, 4ba7)
 - Local SHA-256: `3775a15129dcc4e5b80fc17b7e0841b7fdd1ca89a6e72baa798806f666c74d02`
 - Signing certificate SHA-256 (v2/v3 signing block): `3d7a1223019aa39d9ea0e3436ab7c0896bfb4fb679f4de5fe7c23f326c8f994a` — matches an accepted signature in bundle 2.4.0. Verified locally with `apk_certs.py`.
-- Bundle version + SHA-256:
-- ABI kept (`--striplibs`):
-- Enabled/disabled patches and options:
-- Output file + verification evidence:
-- Date verified:
+- Bundle version + SHA-256: 2.4.0, `880d559a...17cd2`
+- ABI kept (`--striplibs`): `arm64-v8a`
+- Enabled/disabled patches and options: 128 bundle defaults; 6 left disabled (0,1,2,3,4,246)
+- Output file + verification evidence: `workspace/output/youtube-21.30.216-morphe-2.4.0.apk`, 114,171,692 bytes, SHA-256 `2552604f...1cfe86`; package `app.morphe.android.youtube`, versionCode 1561187872, signing cert `d8d293fb...7533`; 128 applied / 0 failed
+- Date verified: 2026-11-27

@@ -38,6 +38,15 @@ Full patch list with names, indices, defaults and compatible versions was writte
 - On an unrooted device, Google sign-in/push in a patched app requires MicroG-RE (official FAQ: https://morphe.software/microg). Installing MicroG-RE is a separate APK install and needs explicit approval.
 - To force a true same-package replacement, `GmsCore support` would need disabling and `Disable Play Store updates` (index 4) enabling; without root/signature spoofing, Google sign-in may then fail. Treat this as an unverified alternative until tested.
 
+## Verified recipe: YouTube (2026-11-27)
+
+1. Base: `workspace/input/youtube-21.30.216-nodpi.apk` (APKMirror universal nodpi plain APK, SHA-256 `3775a151...74d02`, cert `3d7a1223...994a` matches bundle).
+2. Bundle: `tools/patches-2.4.0.mpp` (SHA-256 verified), with `tools/morphe-desktop-2.4.0-all.jar`.
+3. Build: `powershell -File scripts/build-youtube.ps1` — applies the 128 default patches, `--striplibs arm64-v8a`, signs with the private keystore in `workspace/keystore/` (gitignored).
+4. Output: `workspace/output/youtube-21.30.216-morphe-2.4.0.apk` — 114,171,692 bytes, SHA-256 `2552604f...1cfe86`.
+5. Verification evidence: `scripts/apk_manifest.py` → package `app.morphe.android.youtube`, versionName 21.30.216, versionCode 1561187872; `scripts/apk_certs.py` → signing cert `d8d293fb...7533` matches the private keystore alias; patch result JSON → `success=true`, 128 applied, 0 failed, PATCHING/REBUILDING/SIGNING all true; zip integrity OK; original hash unchanged.
+6. Install mode: alongside stock (different package name). MicroG-RE approval granted; not yet fetched or installed.
+
 ## Recipe template (fill in only after a verified run)
 
 ```
