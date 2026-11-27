@@ -37,6 +37,18 @@
       "url": "https://github.com/MorpheApp/morphe-manager/releases/download/v2.8.0/morphe-manager-2.8.0.apk",
       "source": "https://api.github.com/repos/MorpheApp/morphe-manager/releases/latest",
       "verified": "2026-11-27"
+    },
+    {
+      "id": "microg-re",
+      "file": "microg-7.4.0-icon-arm64-v8a.apk",
+      "path": "workspace/input/microg-7.4.0-icon-arm64-v8a.apk",
+      "version": "7.4.0",
+      "installed": true,
+      "sha256": "5587ec2b2fe8738ea92bd04a9e54588059d6e3558add0fe7e0c7e1c7ac908cc9",
+      "size_bytes": 45927168,
+      "url": "https://github.com/MorpheApp/MicroG-RE/releases/download/7.4.0/microg-7.4.0-icon-arm64-v8a.apk",
+      "source": "https://api.github.com/repos/MorpheApp/MicroG-RE/releases/latest (linked by https://morphe.software/microg)",
+      "verified": "2026-11-27"
     }
   ]
 }

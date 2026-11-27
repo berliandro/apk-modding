@@ -59,6 +59,16 @@ Data root: `morphe-data/` next to the JAR, fallback `~/morphe/`, override with `
 - Installed / latest verified: **none / 2.8.0** (not installed; approval gate applies)
 - Workflow: install manager, pick app, Simple mode (one tap) or Expert mode (select patches/options), provide original APK, patch on device, install result. Installers: standard, Shizuku/Sui, root mount, Play Store variants. Verification source: official README, 2026-11-27.
 
+## MicroG-RE (Google services for patched apps on unrooted devices)
+
+- Official: https://morphe.software/microg → https://github.com/MorpheApp/MicroG-RE
+- Latest stable: **7.4.0**, published 2026-11-25 (source: `https://api.github.com/repos/MorpheApp/MicroG-RE/releases/latest`)
+- Downloaded arm64-v8a variant: `microg-7.4.0-icon-arm64-v8a.apk` — 45,927,168 bytes
+- URL: https://github.com/MorpheApp/MicroG-RE/releases/download/7.4.0/microg-7.4.0-icon-arm64-v8a.apk
+- SHA-256: `5587ec2b2fe8738ea92bd04a9e54588059d6e3558add0fe7e0c7e1c7ac908cc9` — verified locally 2026-11-27
+- Package: `app.revanced.android.gms`, version 7.4.0 (read with `scripts/apk_manifest.py`)
+- Not installed on the phone — installing an APK requires explicit approval.
+
 ## Host prerequisites (verified 2026-11-27)
 
 - Present: git 2.55.0, OpenJDK 21 (`java`/`javac`/`keytool`), Python 3.14.5 — satisfies JRE 21+.
