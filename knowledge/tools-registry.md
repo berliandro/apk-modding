@@ -10,7 +10,7 @@ Verified 2026-11-27 from official GitHub repos, release APIs, and official docs.
 - Asset: `morphe-desktop-2.4.0-all.jar` — 48,905,913 bytes
 - URL: https://github.com/MorpheApp/morphe-desktop/releases/download/v2.4.0/morphe-desktop-2.4.0-all.jar
 - SHA-256: `d5f75c05e6c84731dc18faa658810a3ed49ab32d60b756da8503432e78cf1477`
-- Installed / latest verified: **none / 2.4.0**
+- Installed / latest verified: **2.4.0 / 2.4.0** — downloaded to `tools/`, local SHA-256 matched upstream on 2026-11-27.
 - Dependencies: JRE 21+; ADB optional for `-i`; GUI only downloads Skiko + JNA into `morphe-data/libs/` on first launch (CLI downloads nothing).
 - License: GPL-3.0 with Section 7 conditions — preserve notices; do not use "Morphe" branding for derivative works.
 
@@ -44,7 +44,7 @@ Data root: `morphe-data/` next to the JAR, fallback `~/morphe/`, override with `
 - URL: https://github.com/MorpheApp/morphe-patches/releases/download/v2.4.0/patches-2.4.0.mpp
 - SHA-256: `880d559a3a09846d729b6801638c84a7de446918198d590fa557b68c27a17cd2`
 - Public key (from `patches-bundle.json`, 2026-11-27): `g8Ys9leTu2yeixojeR35HrNkK6eOSLpA6nNIizRutqI=`
-- Installed / latest verified: **none / 2.4.0**
+- Installed / latest verified: **2.4.0 / 2.4.0** — downloaded to `tools/`, local SHA-256 matched upstream on 2026-11-27.
 - License: GPL-3.0 with Section 7 conditions.
 
 ## Morphe Manager (on-device patcher, alternative to Desktop)

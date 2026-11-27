@@ -24,6 +24,14 @@ Compatible app versions change with every patch bundle. Do not hard-code or gues
 
 Base versions from older tutorials are stale. If a version differs from the recommended one, Morphe skips incompatible patches by default; `--force` applies them anyway and is not evidence of a working mod.
 
+## Verified query results (2026-11-27, bundle 2.4.0)
+
+Command: `java -jar tools/morphe-desktop-2.4.0-all.jar list-versions --patches tools/patches-2.4.0.mpp -f com.google.android.youtube`
+
+Most common compatible YouTube versions (128 patches each): **21.30.216, 21.28.208, 21.23.492, 20.51.39, 20.26.46**. 21.30.216 is the newest listed and the best first choice.
+
+Full patch list with names, indices, defaults and compatible versions was written to `workspace/temp/youtube-patches.txt` (gitignored, regenerate with `list-patches --with-packages --with-versions --filter-package-name com.google.android.youtube --out <path>`). Universal patches (indices 0–4) apply across apps and are not shown by that filter.
+
 ## Recipe template (fill in only after a verified run)
 
 ```
