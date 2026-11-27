@@ -45,7 +45,8 @@ Full patch list with names, indices, defaults and compatible versions was writte
 3. Build: `powershell -File scripts/build-youtube.ps1` — applies the 128 default patches, `--striplibs arm64-v8a`, signs with the private keystore in `workspace/keystore/` (gitignored).
 4. Output: `workspace/output/youtube-21.30.216-morphe-2.4.0.apk` — 114,171,692 bytes, SHA-256 `2552604f...1cfe86`.
 5. Verification evidence: `scripts/apk_manifest.py` → package `app.morphe.android.youtube`, versionName 21.30.216, versionCode 1561187872; `scripts/apk_certs.py` → signing cert `d8d293fb...7533` matches the private keystore alias; patch result JSON → `success=true`, 128 applied, 0 failed, PATCHING/REBUILDING/SIGNING all true; zip integrity OK; original hash unchanged.
-6. Install mode: alongside stock (different package name). MicroG-RE approval granted; not yet fetched or installed.
+6. Install mode: alongside stock (different package name). MicroG-RE approval granted; downloaded and verified but not installed on the phone.
+7. Published 2026-11-27 as GitHub Release `youtube-patched-21.30.216`: https://github.com/berliandro/apk-modding/releases/tag/youtube-patched-21.30.216 (both APKs uploaded as release assets; `*.apk` remains gitignored). Asset digests matched local SHA-256.
 
 ## Recipe template (fill in only after a verified run)
 
