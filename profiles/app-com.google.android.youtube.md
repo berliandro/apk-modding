@@ -11,9 +11,15 @@ Source: user statement and official Morphe sources, 2026-11-27.
 - Desired mod: **not yet specified** — confirm before selecting patches
 - Delivery preference: signed standalone `.apk` for WhatsApp transfer
 
+## Verified from bundle 2.4.0 (2026-11-27)
+
+- Most common compatible versions (128 patches each): 21.30.216, 21.28.208, 21.23.492, 20.51.39, 20.26.46
+- Best first choice: **21.30.216**
+- YouTube patches available: 134 (128 enabled by default, 6 disabled: indices 0–4 universal plus 246 `Network proxy`)
+- Full list: `workspace/temp/youtube-patches.txt` (gitignored; regenerate with `list-patches --with-packages --with-versions --filter-package-name com.google.android.youtube --out <path>`)
+
 ## To fill after bundle verification
 
-- Recommended version per `list-versions --patches ... -f com.google.android.youtube`:
 - Base file source URL + SHA-256:
 - Bundle version + SHA-256:
 - ABI kept (`--striplibs`):
