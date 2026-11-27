@@ -1,0 +1,30 @@
+# Local tool binaries and JARs (tracked manifest only)
+tools/*
+!tools/manifest.json
+
+# Working data: originals, scratch, signed outputs
+workspace/
+
+# Android packages and signing material
+*.apk
+*.apkm
+*.xapk
+*.apks
+*.jar
+*.keystore
+*.jks
+
+# Environment, secrets, credentials, tokens
+.env
+.env.*
+*.pem
+*.key
+id_rsa*
+*credential*
+*secret*
+*token*
+
+# Logs and scratch
+logs/
+*.log
+*.tmp
