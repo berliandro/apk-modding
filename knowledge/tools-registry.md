@@ -66,7 +66,8 @@ Data root: `morphe-data/` next to the JAR, fallback `~/morphe/`, override with `
 - Downloaded arm64-v8a variant: `microg-7.4.0-icon-arm64-v8a.apk` — 45,927,168 bytes
 - URL: https://github.com/MorpheApp/MicroG-RE/releases/download/7.4.0/microg-7.4.0-icon-arm64-v8a.apk
 - SHA-256: `5587ec2b2fe8738ea92bd04a9e54588059d6e3558add0fe7e0c7e1c7ac908cc9` — verified locally 2026-11-27
-- Package: `app.revanced.android.gms`, version 7.4.0 (read with `scripts/apk_manifest.py`)
+- Package: `app.revanced.android.gms`, version 7.4.0 (read with `scripts/apk_manifest.py`); v2/v3 signing cert SHA-256 `0b6c9515afb195fac59601696ba0a7907a0b217ccf720b43148427ccf64343e7`
+- Local check 2026-11-27: Windows Defender (signatures same day) reported "found no threats"; ZIP integrity OK; 71 declared permissions, mostly typical of a GmsCore replacement. **This is not a multi-engine malware scan and no developer signature was published with the release.**
 - Not installed on the phone — installing an APK requires explicit approval.
 
 ## Host prerequisites (verified 2026-11-27)
