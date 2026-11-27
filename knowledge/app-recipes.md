@@ -32,6 +32,12 @@ Most common compatible YouTube versions (128 patches each): **21.30.216, 21.28.2
 
 Full patch list with names, indices, defaults and compatible versions was written to `workspace/temp/youtube-patches.txt` (gitignored, regenerate with `list-patches --with-packages --with-versions --filter-package-name com.google.android.youtube --out <path>`). Universal patches (indices 0–4) apply across apps and are not shown by that filter.
 
+## Verified install behaviour (official FAQ + bundle patch description, 2026-11-27)
+
+- The `GmsCore support` patch (index 238, enabled by default) uses "a different package name" — official Morphe FAQ command examples use `app.morphe.android.youtube` for patched YouTube. Expect the patched app to install **alongside** stock, not replace it, with default patches. Confirm the actual package name from the output APK before installing.
+- On an unrooted device, Google sign-in/push in a patched app requires MicroG-RE (official FAQ: https://morphe.software/microg). Installing MicroG-RE is a separate APK install and needs explicit approval.
+- To force a true same-package replacement, `GmsCore support` would need disabling and `Disable Play Store updates` (index 4) enabling; without root/signature spoofing, Google sign-in may then fail. Treat this as an unverified alternative until tested.
+
 ## Recipe template (fill in only after a verified run)
 
 ```

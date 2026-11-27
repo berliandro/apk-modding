@@ -18,9 +18,13 @@ Source: user statement and official Morphe sources, 2026-11-27.
 - YouTube patches available: 134 (128 enabled by default, 6 disabled: indices 0–4 universal plus 246 `Network proxy`)
 - Full list: `workspace/temp/youtube-patches.txt` (gitignored; regenerate with `list-patches --with-packages --with-versions --filter-package-name com.google.android.youtube --out <path>`)
 
-## To fill after bundle verification
+## Verified base APK (2026-11-27)
 
-- Base file source URL + SHA-256:
+- File: `workspace/input/youtube-21.30.216-nodpi.apk` (gitignored, immutable)
+- Source: APKMirror, universal (nodpi) plain `.apk`, Android 10+ — https://www.apkmirror.com/apk/google-inc/youtube/youtube-21-30-216-release/youtube-21-30-216-2-android-apk-download/
+- Version code: 1561187872; size 198,948,665 bytes; published signature ID 24bb (other valid: 3891, 4ba7)
+- Local SHA-256: `3775a15129dcc4e5b80fc17b7e0841b7fdd1ca89a6e72baa798806f666c74d02`
+- Signing certificate SHA-256 (v2/v3 signing block): `3d7a1223019aa39d9ea0e3436ab7c0896bfb4fb679f4de5fe7c23f326c8f994a` — matches an accepted signature in bundle 2.4.0. Verified locally with `apk_certs.py`.
 - Bundle version + SHA-256:
 - ABI kept (`--striplibs`):
 - Enabled/disabled patches and options:
