@@ -1,19 +1,6 @@
-# Profile template
+# App profile template
 
-Copy to `device-<name>.md` or `app-<package>.md` and fill in only detected or user-provided facts.
-
-## Device
-
-- Model / codename:
-- SoC:
-- ABI (e.g. `arm64-v8a`):
-- Android version / SDK level:
-- DPI / screen density:
-- Root status (none / Magisk / other):
-- Installer method (standard / Shizuku / root mount):
-- Detection source + date:
-
-## App
+Copy to `app-<package>.md` in `profiles/` and fill in only detected or user-provided facts. Device/phone specifics belong in the gitignored `private/` directory, not here.
 
 - Name / package:
 - Installed version name / version code:

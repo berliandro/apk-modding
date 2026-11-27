@@ -4,7 +4,7 @@ Source: user statement and official Morphe sources, 2026-11-27.
 
 - Name: YouTube
 - Package: `com.google.android.youtube`
-- Target device: `device-sm-n970f.md` (Android 12 / SDK 31, `arm64-v8a`, unrooted)
+- Target device: private profile in gitignored `private/`; patched for `arm64-v8a` on an unrooted device
 - Installed version name / version code: **not provided**
 - Base APK format: plain `.apk` (Morphe patch metadata marks YouTube as `APK_REQUIRED`; source: `patches-list.json`, 2026-11-27)
 - Original APK in `workspace/input/`: no

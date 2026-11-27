@@ -8,7 +8,8 @@ This is an APK-modding automation workspace, not an application codebase. The de
 
 ## Layout
 
-- `profiles/` — one Markdown profile per device and per target app. Device: SoC, ABI (e.g. `arm64-v8a`), Android version + SDK level, DPI, root status, installer method. App: package name, installed version + version code, APK vs split (`.apkm`/`.xapk`/`.apks`) format.
+- `private/` — gitignored. Device profiles and anything identifying the phone or user (model, build/baseband, serials, accounts). Never commit this directory.
+- `profiles/` — one Markdown profile per target app: package name, installed version + version code, APK vs split (`.apkm`/`.xapk`/`.apks`) format. Device specs belong in `private/`, referenced generically here.
 - `knowledge/` — `tools-registry.md` (tool, official URL, installed/latest verified version, exact CLI flags, dependencies, verification date), `app-recipes.md` (workflows, compatible base versions, split handling, patch selections), `troubleshooting.md` (error → root cause → verified fix).
 - `scripts/` — parameterized, reusable automation with clear error messages. Promote repeated one-off commands here.
 - `tools/` — local binaries/JARs, gitignored. Only `tools/manifest.json` is tracked (version, SHA-256, upstream URL).

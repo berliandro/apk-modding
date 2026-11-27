@@ -2,6 +2,9 @@
 tools/*
 !tools/manifest.json
 
+# Personal and device-specific information (never publish)
+private/
+
 # Working data: originals, scratch, signed outputs
 workspace/
 
