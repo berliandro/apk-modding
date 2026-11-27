@@ -8,7 +8,8 @@ param(
   [string]$PasswordFile = 'workspace/keystore/keystore.password',
   [string]$Alias = 'apkmodding',
   [string]$StripLibs = 'arm64-v8a',
-  [string]$ResultFile = 'workspace/temp/youtube-patch-result.json'
+  [string]$ResultFile = 'workspace/temp/youtube-patch-result.json',
+  [string[]]$Extra = @()
 )
 
 $ErrorActionPreference = 'Stop'
@@ -28,9 +29,10 @@ $arguments = @(
   '--keystore-password', $pass,
   '--keystore-entry-alias', $Alias,
   '--keystore-entry-password', $pass,
-  '-r', $ResultFile,
-  $InputApk
+  '-r', $ResultFile
 )
+$arguments += $Extra
+$arguments += $InputApk
 
 & java -jar $Jar @arguments
 if ($LASTEXITCODE -ne 0) { throw "Patching failed (exit $LASTEXITCODE). See log above." }

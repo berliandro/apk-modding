@@ -63,6 +63,18 @@ Full patch list with names, indices, defaults and compatible versions was writte
 4. Verification: result JSON `success=true`, 67 applied / 0 failed, all steps true; output cert matches keystore; zip integrity OK; base unchanged.
 5. Published with YouTube Music in GitHub Release `patched-music-reddit-2026-11-27`: https://github.com/berliandro/apk-modding/releases/tag/patched-music-reddit-2026-11-27
 
+## Original launcher icon variant (verified 2026-11-27)
+
+`Custom branding` (YouTube index 170, YouTube Music) exposes option `appIcon`. Verified CLI docs value `original` = "keep the icon of the unpatched app". The patcher always packages all icon resource variants; the selected value is compiled into the patched app, so differing output SHA-256 is the practical evidence the option took effect.
+
+Most reliable method (avoids CLI quoting issues with `-O`):
+
+1. `java -jar tools/morphe-desktop-2.4.0-all.jar options-create -p tools/patches-2.4.0.mpp -f <package> -o <file>.json` — writes a **top-level JSON array** (do not reserialize with PowerShell `ConvertTo-Json`, which collapses the array and adds a BOM).
+2. Replace `"appIcon": null` with `"appIcon": "original"` in the raw text (Python, UTF-8 no BOM).
+3. Build with `--options-file <file>.json`. Do not also pass `-OappIcon=...`; that path requires an `-e` for `Custom branding`.
+4. Outputs rebuilt this way: `youtube-21.30.216-morphe-2.4.0-original-icon.apk` SHA-256 `a4a318de…7a26553`, `youtube-music-9.30.53-morphe-2.4.0-original-icon.apk` SHA-256 `f8568e83…a5101`; 128/62 patches applied, 0 failed, signed with private keystore, zip OK.
+5. Published: https://github.com/berliandro/apk-modding/releases/tag/youtube-original-icon-2026-11-27
+
 ## Recipe template (fill in only after a verified run)
 
 ```
