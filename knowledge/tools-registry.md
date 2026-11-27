@@ -71,6 +71,17 @@ Data root: `morphe-data/` next to the JAR, fallback `~/morphe/`, override with `
 - Local check 2026-11-27: Windows Defender (signatures same day) reported "found no threats"; ZIP integrity OK; 71 declared permissions, mostly typical of a GmsCore replacement. **This is not a multi-engine malware scan.**
 - Not installed on the phone — installing an APK requires explicit approval.
 
+## Alternative patchers — trust signals (researched 2026-11-27)
+
+| Project | Social proof / status | Verdict |
+|---|---|---|
+| Morphe (current workspace) | Official `MorpheApp` repos: manager ~10.9k stars, patches ~5.2k; active releases 2026-11-25/26; GPL-3.0 + NOTICE; publishes patches public key (`g8Ys9leTu2yeixojeR35HrNkK6eOSLpA6nNIizRutqI=`) and MicroG-RE cert fingerprint | Best current active option; already in use here |
+| ReVanced (original) | Official site revanced.app; GitHub repos return HTTP 451 (taken down, per news reports March 2026). Temporary GitLab mirror `ReVanced/revanced-patches`: 140 stars, 230 forks, newest listed release v6.1.1-dev.3 dated 2026-03-20; site still lists Manager v2.6.0 | Largest historical community, but public source/release path is in limbo — not a reliable current choice |
+| RVX (inotia00) | `inotia00/revanced-patches`: 2,249 stars, but `archived: true`, marked "deprecated and no longer actively maintained", last push 2026-03-10 | Strong past social proof, dormant — avoid for current app versions |
+| anddea/revanced-patches | 1,957 stars, active (v4.4.0-dev.9 2026-11-23), migrated to Morphe patcher in v4.0.0; **Morphe's official add-source page flags it "unsafe and cannot be added"** | Red flag — do not add as a source |
+
+General trust check: official website/docs linked from repo, long-lived stars/forks/contributors, recent releases, GPL source, published signing fingerprint that matches the downloaded artifact, and no "unsafe" flag in the manager's official source list. Pre-patched APKs from random sites are explicitly discouraged by Morphe's FAQ.
+
 ## Host prerequisites (verified 2026-11-27)
 
 - Present: git 2.55.0, OpenJDK 21 (`java`/`javac`/`keytool`), Python 3.14.5 — satisfies JRE 21+.
