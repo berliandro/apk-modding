@@ -83,6 +83,7 @@ Most reliable method (avoids CLI quoting issues with `-O`):
 4. Clean base: APKPure arm64 XAPK (base + config.mdpi), 147,825,243 bytes, base cert SHA-1 `c56fb7d5…545eed` matching APKPure's published signature.
 5. Build: `powershell -File scripts/build-app.ps1 -Bundle tools/piko-noreels-3.11.1.mpp -InputApk workspace/input/instagram-452.1.0.53.64-arm64.xapk -Out workspace/output/instagram-452.1.0.53.64-piko-noreels.apk -ResultFile workspace/temp/instagram-patch-result.json`
 6. Verification: result `success=true`, 65 applied / 0 failed, `Customize navigation bar` applied, all steps true; output package `com.instagram.android`, version 452.1.0.53.64, versionCode 2147483647, cert matches private keystore, ZIP OK. Output SHA-256 `6ca1607e…5ecad4`.
+7. Published 2026-11-28: https://github.com/berliandro/apk-modding/releases/tag/instagram-noreels-2026-11-28 (release asset digest matched local SHA-256).
 
 ## Recipe template (fill in only after a verified run)
 
