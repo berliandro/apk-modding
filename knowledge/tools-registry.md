@@ -82,6 +82,16 @@ Data root: `morphe-data/` next to the JAR, fallback `~/morphe/`, override with `
 
 General trust check: official website/docs linked from repo, long-lived stars/forks/contributors, recent releases, GPL source, published signing fingerprint that matches the downloaded artifact, and no "unsafe" flag in the manager's official source list. Pre-patched APKs from random sites are explicitly discouraged by Morphe's FAQ.
 
+## Instagram patch source (researched 2026-11-28)
+
+- **Piko** — https://github.com/crimera/piko — "morphe patches for twitter and instagram"
+- Trust signals: 6,136 stars, 291 forks, GPL-3.0 + NOTICE, active push 2026-11-28, 66 Instagram patches, latest release `v3.11.1` (2026-11-10), asset `patches-3.11.1.mpp` 8,676,045 B, SHA-256 `dde8e119e2ab0d13f8245a63385581fc1a5eb8016d66f63c31ddd75f2729953b` (verified locally).
+- Morphe-compatible: README says Piko patches use Morphe from v3.0.0; add via https://morphe.software/add-source?github=crimera/piko (community source → TOFU key trust, only add if you trust the author).
+- Requested feature: patch **Customize navigation bar** ("Choose which tabs appear in the bottom navigation bar and reorder them"). Source `NavigationBarPatch.java` defines `Tab.REELS` and `Pref.hideNavigationReels()`, so the Reels tab can be hidden from the bottom bar; configuration lives in the patched app's settings. Complementary patches: `Disable Reels scrolling`, `Focus Lock` (forces Reels hidden for a chosen duration).
+- Supported Instagram version per bundle: 452.1.0.53.64. Patched via Morphe Desktop CLI: `java -jar morphe-desktop.jar patch --patches patches-3.11.1.mpp <instagram.apkm>` (APKM applied directly, do not unsplit).
+- Alternatives with less social proof: `brosssh/morphe-patches` (354 stars, last push 2026-11-01, has "Hide navigation buttons" with Hide Reels option), `SysAdminDoc/HushGram` (513 stars, 36 forks, active 2026-11-27, 197 Instagram patches). Not yet verified for the exact Reels-nav feature.
+- Account risk: modded Instagram clients are not endorsed by Meta and may violate its terms; test with a secondary account.
+
 ## Host prerequisites (verified 2026-11-27)
 
 - Present: git 2.55.0, OpenJDK 21 (`java`/`javac`/`keytool`), Python 3.14.5 — satisfies JRE 21+.
