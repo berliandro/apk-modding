@@ -75,6 +75,15 @@ Most reliable method (avoids CLI quoting issues with `-O`):
 4. Outputs rebuilt this way: `youtube-21.30.216-morphe-2.4.0-original-icon.apk` SHA-256 `a4a318de…7a26553`, `youtube-music-9.30.53-morphe-2.4.0-original-icon.apk` SHA-256 `f8568e83…a5101`; 128/62 patches applied, 0 failed, signed with private keystore, zip OK.
 5. Published: https://github.com/berliandro/apk-modding/releases/tag/youtube-original-icon-2026-11-27
 
+## Verified recipe: Instagram with Reels removed from nav (2026-11-28)
+
+1. Trusted source: Piko (https://github.com/crimera/piko), 6,136 stars / 291 forks, GPL-3.0, active. Upstream bundle v3.11.1 SHA-256 `dde8e119…9953b` verified.
+2. Piko's `Customize navigation bar` is configured in-app, so the released bundle cannot hide Reels at build time. Built a modified bundle locally from Piko source: removed `Tab.REELS` from `NavigationBarPatch.DEFAULT_VISIBLE` in `extensions/instagram/.../navigation/NavigationBarPatch.java`. Build required GitHub Packages credentials (`gpr.user`/`gpr.key`) and a temp Android SDK (platform 35/36 + build-tools 36). `javap -c` confirmed compiled `DEFAULT_VISIBLE = EnumSet.of(HOME, MESSAGES, SEARCH, PROFILE)` — no REELS.
+3. Modified bundle: `tools/piko-noreels-3.11.1.mpp`, SHA-256 `1ccce246…a8a969`; `list-versions` reports Instagram 452.1.0.53.64 with versionCode ARM64_V8A=385811006.
+4. Clean base: APKPure arm64 XAPK (base + config.mdpi), 147,825,243 bytes, base cert SHA-1 `c56fb7d5…545eed` matching APKPure's published signature.
+5. Build: `powershell -File scripts/build-app.ps1 -Bundle tools/piko-noreels-3.11.1.mpp -InputApk workspace/input/instagram-452.1.0.53.64-arm64.xapk -Out workspace/output/instagram-452.1.0.53.64-piko-noreels.apk -ResultFile workspace/temp/instagram-patch-result.json`
+6. Verification: result `success=true`, 65 applied / 0 failed, `Customize navigation bar` applied, all steps true; output package `com.instagram.android`, version 452.1.0.53.64, versionCode 2147483647, cert matches private keystore, ZIP OK. Output SHA-256 `6ca1607e…5ecad4`.
+
 ## Recipe template (fill in only after a verified run)
 
 ```

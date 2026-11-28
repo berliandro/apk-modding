@@ -49,6 +49,15 @@
       "url": "https://github.com/MorpheApp/MicroG-RE/releases/download/7.4.0/microg-7.4.0-icon-arm64-v8a.apk",
       "source": "https://api.github.com/repos/MorpheApp/MicroG-RE/releases/latest (linked by https://morphe.software/microg)",
       "verified": "2026-11-27"
+    },
+    {
+      "id": "piko-noreels",
+      "file": "piko-noreels-3.11.1.mpp",
+      "version": "3.11.1-modified",
+      "installed": true,
+      "sha256": "1ccce2464671cf84f0c3e472dcdfd7802d50584461aff39d91777c60c6a8a969",
+      "source": "Locally built from https://github.com/crimera/piko v3.11.1 with Tab.REELS removed from NavigationBarPatch.DEFAULT_VISIBLE; upstream bundle sha256 dde8e119e2ab0d13f8245a63385581fc1a5eb8016d66f63c31ddd75f2729953b",
+      "verified": "2026-11-28"
     }
   ]
 }

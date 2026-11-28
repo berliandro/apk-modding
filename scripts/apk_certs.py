@@ -32,5 +32,6 @@ for ident, name in ((b'\x1a\x87\x09\x71', 'v2'), (b'\xc0\x68\x53\xf0', 'v3')):
                 certs_seq, off = lp(signed_data, off)
                 for cert in seq_lp(certs_seq):
                     print(name, 'cert SHA-256:', hashlib.sha256(cert).hexdigest())
+                    print(name, 'cert SHA-1:', hashlib.sha1(cert).hexdigest())
         except Exception as exc:
             print(name, 'parse error at', idx, exc)
